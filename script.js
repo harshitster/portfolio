@@ -1,46 +1,3 @@
-// Theme Management
-class ThemeManager {
-    constructor() {
-        this.theme = localStorage.getItem('theme') ||
-            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        this.init();
-    }
-
-    init() {
-        document.documentElement.setAttribute('data-theme', this.theme);
-        this.updateToggleIcon();
-        this.bindEvents();
-    }
-
-    toggle() {
-        this.theme = this.theme === 'light' ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', this.theme);
-        localStorage.setItem('theme', this.theme);
-        this.updateToggleIcon();
-    }
-
-    updateToggleIcon() {
-        const toggles = document.querySelectorAll('.theme-toggle');
-        toggles.forEach(toggle => {
-            toggle.textContent = this.theme === 'light' ? '🌙' : '☀️';
-        });
-    }
-
-    bindEvents() {
-        document.querySelectorAll('.theme-toggle').forEach(toggle => {
-            toggle.addEventListener('click', () => this.toggle());
-        });
-
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            if (!localStorage.getItem('theme')) {
-                this.theme = e.matches ? 'dark' : 'light';
-                document.documentElement.setAttribute('data-theme', this.theme);
-                this.updateToggleIcon();
-            }
-        });
-    }
-}
-
 // Navigation Management
 class NavigationManager {
     constructor() {
@@ -189,7 +146,6 @@ class ScrollAnimations {
 
 // Initialize all components when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    new ThemeManager();
     new NavigationManager();
     new ScrollProgress();
     new ScrollAnimations();
