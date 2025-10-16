@@ -131,8 +131,8 @@
         <p class="about-text">
           I'm a Graduate ML Systems Researcher at UC San Diego's STABLE Labs under Prof. Jishen Zhao, currently
           working on distributed systems for vector databases using emerging interconnects in collaboration with SK
-          Hynix. As a second-year MS Computer Science student specializing in AI and Distributed Systems, I'm set to
-          graduate in 2026. <br><br>
+          Hynix. As a second-year MS Computer Science student specializing in AI and Distributed Systems, I intend to
+          graduate in March 2026. <br><br>
           My research journey began at PES University, Bangalore, where I focused on Image Processing and Computer
           Vision. I've gained valuable industry experience through internships at Peptris Technologies, working on 2D/3D
           molecular data with Generative AI, and a Deep Learning Research position at the National University of
@@ -214,16 +214,17 @@
             <h3 class="timeline-title">Graduate ML Systems Researcher</h3>
             <p class="timeline-subtitle">University of California, San Diego - STABLE Labs | May 2025 - Present</p>
             <div class="timeline-description">
-              <p>• Architected pipeline-parallelized LLM inference with CXL shared memory and novel KV cache
-                across GPU nodes, achieving constant 30µs decode latency and 30K tokens/sec throughput,
-                outperforming HuggingFace's DynamicCache by 300-1600x on long-context inference.
-                .</p> <br>
-              <p>• Enabled variable sequence length scaling with minimal fragmentation through block-based KV cache
-                achieving O(1) complexity and robust performance, eliminating 20x slowdown with 16x lower memory
-                overhead versus HuggingFace's KV cache implementations..</p><br>
-              <p>• Eliminated inter-GPU communication bottleneck through CXL shared memory architecture,
-                enabling zero-copy tensor activations access across pipeline stages and removing
-                network synchronization overhead in multi-node inference system..</p>
+              <p>• Architected parallelized LLM inference system using PyTorch and CUDA, with CXL shared memory and
+                novel vector database across GPU nodes, leveraging NCCL for distributed communication and outperforming
+                HuggingFace's approach by 300x-1600x on
+                long context inference.
+              </p> <br>
+              <p>• Engineered production-grade scalable KV cache in C++/PyTorch extensions with Triton-optimized
+                kernels, achieving O(1) operation complexity, eliminating 20x performance degradation while reducing
+                memory overhead by 16x compared to HuggingFace implementations.</p><br>
+              <p>• Eliminated inter-GPU communication bottleneck through CXL shared memory architecture, enabling
+                zero-copy tensor activations access across pipeline stages and removing network synchronization overhead
+                in multi-node inference systems.</p>
             </div>
           </div>
         </div>
@@ -233,19 +234,20 @@
             <h3 class="timeline-title">AI Research Intern</h3>
             <p class="timeline-subtitle">Peptris Technologies | Jan 2024 - Jun 2024</p>
             <div class="timeline-description">
-              <p>• Developed end-to-end Graph Attention Variational Autoencoder pipeline with Gumbel-Sinkhorn operator
-                for permutation-invariant 3D molecular conformation generation,
-                training on 150M+ structures to produce 18K+ diverse conformations with 14% improved binding pose
-                accuracy.
+              <p>• Developed end-to-end permutation invariant Graph Attention VAE pipeline for 3D data generation,
+                training on 150M+ structures stored in GCS buckets with RDKit-based preprocessing to produce 18K+
+                diverse conformations with 14% improved binding pose accuracy.
               </p> <br>
-              <p>• Implemented Latent Diffusion Model on VAE latent space using score-matching with Langevin dynamics,
-                achieving 38% inference speedup (2.4s to 1.5s per molecule) for
-                high-throughput processing on multi-cloud infrastructure (GCS storage, AWS compute).
+              <p>• Fine-tuned Latent Diffusion Model for pose generation, achieving 38% inference speedup (2.4s to 1.5s
+                per molecule) through optimized sampling, deployed
+                on AWS EC2 with Docker containers for high-throughput processing and GCS for model artifact storage in
+                multi-cloud infrastructure.
               </p> <br>
               <p>
                 Evaluated 6 graph architectures (GCN, MuchGCN, PIGVAE) and diffusion techniques (score matching with
-                Langevin dynamics, Riemannian manifolds) under CTO/Chief Data Scientist supervision, establishing model
-                selection framework for production deployment.
+                Langevin dynamics, Riemannian manifolds)
+                with MLflow experiment tracking under CTO/Chief Data Scientist supervision, establishing model selection
+                framework for production deployment.
               </p>
             </div>
           </div>
@@ -256,13 +258,27 @@
             <h3 class="timeline-title">Machine Learning Intern</h3>
             <p class="timeline-subtitle">Peptris Technologies | Jun 2023 - Sept 2023</p>
             <div class="timeline-description">
-              <p>• Engineered Large Language Model inference pipeline for protein sequence generation, producing 2,400+
-                novel protein candidates achieving 87% structural validity for downstream screening in drug discovery
-                process..</p> <br>
-              <p>• Designed 3D U-Net model for voxel-based protein analysis, implementing 3D convolutional architecture
-                to detect and segment binding sites in protein structures, enabling identification for downstream
-                molecular docking in drug discovery workflows..</p>
+              <p>• Engineered protein sequence generation pipeline using transformer-based language model with sparse
+                Mixture-of-Experts architecture in TensorFlow,
+                reducing computational requirements by 40% while maintaining 87% structural validity validated through
+                AlphaFold2 predictions.</p> <br>
+              <p>• Built 3D U-Net model in TensorFlow for high-throughput binding pocket detection, processing 50+
+                protein structures hourly and identifying multiple
+                potential binding sites per structure to accelerate drug discovery for molecular docking.</p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-card">
+          <h3 class="timeline-title">Deep Learning Research Intern</h3>
+          <p class="timeline-subtitle">National University of Singapore (NUS) | Jun 2022 - Jul 2022</p>
+          <div class="timeline-description">
+            <p>• Led a team of 6 in developing breast cancer detection system, architecting ensemble of custom CNN,
+              VGG19, and ResNet50 with Scikit-learn soft voting,
+              Pandas/NumPy preprocessing and TensorFlow augmentation pipeline with Matplotlib dashboards, achieving
+              99.4% classification accuracy.</p>
           </div>
         </div>
       </div>
