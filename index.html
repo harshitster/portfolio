@@ -214,15 +214,16 @@
             <h3 class="timeline-title">Graduate ML Systems Researcher</h3>
             <p class="timeline-subtitle">University of California, San Diego - STABLE Labs | May 2025 - Present</p>
             <div class="timeline-description">
-              <p>• Solved memory fragmentation in LLM KV cache systems by architecting
-                dynamic memory allocations, achieving 300x faster write operations and superior
-                scaling with only 11.5x degradation vs 40x degradation at 16,000 tokens against HuggingFace's cache.
+              <p>• Architected pipeline-parallelized LLM inference with CXL shared memory and novel KV cache
+                across GPU nodes, achieving constant 30µs decode latency and 30K tokens/sec throughput,
+                outperforming HuggingFace's DynamicCache by 300-1600x on long-context inference.
                 .</p> <br>
-              <p>• Built concurrent multi-user request handling for KV Cache with atomic memory
-                allocation, distributed sharding, and write-through buffering, maintaining consistent sub-70 microsecond
-                write latencies across sequence lengths and 25,000 tokens/second throughput.</p><br>
-              <p>• Eliminated heavy inter-node communication overhead in distributed neural networks by implementing
-                memory-mapped shared storage for zero-copy tensor activation transfer across pipeline stages..</p>
+              <p>• Enabled variable sequence length scaling with minimal fragmentation through block-based KV cache
+                achieving O(1) complexity and robust performance, eliminating 20x slowdown with 16x lower memory
+                overhead versus HuggingFace's KV cache implementations..</p><br>
+              <p>• Eliminated inter-GPU communication bottleneck through CXL shared memory architecture,
+                enabling zero-copy tensor activations access across pipeline stages and removing
+                network synchronization overhead in multi-node inference system..</p>
             </div>
           </div>
         </div>
@@ -232,12 +233,19 @@
             <h3 class="timeline-title">AI Research Intern</h3>
             <p class="timeline-subtitle">Peptris Technologies | Jan 2024 - Jun 2024</p>
             <div class="timeline-description">
-              <p>• Spearheaded development of data augmentation pipeline for Graph Attention Network-based molecular
-                conformation models, generating 25,000+ additional training samples and improving model accuracy by 12%.
+              <p>• Developed end-to-end Graph Attention Variational Autoencoder pipeline with Gumbel-Sinkhorn operator
+                for permutation-invariant 3D molecular conformation generation,
+                training on 150M+ structures to produce 18K+ diverse conformations with 14% improved binding pose
+                accuracy.
               </p> <br>
-              <p>• Architected and optimized sampling framework for a Diffusion Model-based protein-ligand pose
-                generation, collaborating with ML engineering team to reduce the generation time from 2.3s to 1.7s (35%
-                improvement)
+              <p>• Implemented Latent Diffusion Model on VAE latent space using score-matching with Langevin dynamics,
+                achieving 38% inference speedup (2.4s to 1.5s per molecule) for
+                high-throughput processing on multi-cloud infrastructure (GCS storage, AWS compute).
+              </p> <br>
+              <p>
+                Evaluated 6 graph architectures (GCN, MuchGCN, PIGVAE) and diffusion techniques (score matching with
+                Langevin dynamics, Riemannian manifolds) under CTO/Chief Data Scientist supervision, establishing model
+                selection framework for production deployment.
               </p>
             </div>
           </div>
