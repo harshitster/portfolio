@@ -214,17 +214,13 @@
             <h3 class="timeline-title">Graduate ML Systems Researcher</h3>
             <p class="timeline-subtitle">University of California, San Diego - STABLE Labs | May 2025 - Present</p>
             <div class="timeline-description">
-              <p>• Architected parallelized LLM inference system using PyTorch and CUDA, with CXL shared memory and
-                novel vector database across GPU nodes, leveraging NCCL for distributed communication and outperforming
-                HuggingFace's approach by 300x-1600x on
-                long context inference.
+              <p>• Architected parallelized LLM inference system using PyTorch and CUDA, with CXL 3.0 shared memory and novel vector database across GPU nodes,
+                leveraging NCCL for distributed communication and outperforming vLLM by 1.4x on throughput measurement on concurrent user requests.
               </p> <br>
-              <p>• Engineered production-grade scalable KV cache in C++/PyTorch extensions with Triton-optimized
-                kernels, achieving O(1) operation complexity, eliminating 20x performance degradation while reducing
-                memory overhead by 16x compared to HuggingFace implementations.</p><br>
-              <p>• Eliminated inter-GPU communication bottleneck through CXL shared memory architecture, enabling
-                zero-copy tensor activations access across pipeline stages and removing network synchronization overhead
-                in multi-node inference systems.</p>
+              <p>• Engineered production-grade scalable KV cache in C++/PyTorch extensions with CUDA and Triton kernels, achieving O(1) write operation complexity
+                leading to 300x - 1600x improvement and reducing memory overhead by 16x compared to HuggingFace implementations.</p><br>
+              <p>• Eliminated inter-GPU communication bottleneck through CXL 3.0 shared memory architecture, enabling zero-copy tensor activations access across
+                pipeline stages and removing network synchronization overhead in multi-node inference systems.</p>
             </div>
           </div>
         </div>
